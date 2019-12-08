@@ -44,7 +44,7 @@ Contact US -
 
 3. To run the code, run:
 
-    `node server.js`
+    `nodemon`
 
     
 4. In the browser open http://localhost:3000, and you should see the index page
