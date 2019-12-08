@@ -9,7 +9,7 @@ Project Name - 'CARDOOR'
 Project Introduction - 
 
 'CARDOOR' is an online car sharing/booking system. 
-'CARDOOR' offers you the option to put up you car for rent, and potential customers can rent your car at a fixed upon hourly rate charge 
+'CARDOOR' offers you the option to put up you car for rent, and potential customers can rent your car at a fixed upon hourly rate charge. 
 
 
 
@@ -42,13 +42,10 @@ Contact US -
    `npm install`
 
 
-   `bower install`
-
-
 3. To run the code, run:
 
     `node server.js`
 
     
-4. In the browser open http://localhost:3000/, and you should see the index page
+4. In the browser open http://localhost:3000, and you should see the index page
 
