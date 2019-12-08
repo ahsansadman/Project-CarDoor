@@ -11,12 +11,19 @@ Project Introduction -
 
 Homepage -
 
-<img src="images/home.jpg">
-<img src="images/home2.jpg">
-<img src="images/home3.jpg">
-<img src="images/home4.jpg">
-<img src="images/home5.jpg">
+<img src="images/home.JPG">
+<img src="images/home2.JPG">
+<img src="images/home3.JPG">
+<img src="images/home4.JPG">
+<img src="images/home5.JPG">
 
+About US -
+
+<img src="images/about.JPG">
+
+Contact US -
+
+<img src="images/contact.JPG">
 
 
 
