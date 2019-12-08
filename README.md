@@ -1,4 +1,8 @@
-Project Developed By - Team Dementors
+Project Developed By - 
+Ahnaf Atef Khan
+Ahsan Sadman Khan
+Syed Tasdiq
+ 
 
 Project Name - 'CARDOOR'
 
