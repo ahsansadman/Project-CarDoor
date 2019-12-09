@@ -45,7 +45,15 @@ app.use(cors());
 
 // app.use(flash());
 
-mongoose.connect("mongodb://localhost:27017/rentalapp", {useNewUrlParser:true, useUnifiedTopology: true});
+// mongoose.connect("mongodb://localhost:27017/rentalapp", {useNewUrlParser:true, useUnifiedTopology: true});
+
+const url = 'mongodb+srv://aak:aak1234@cluster0-n2krw.mongodb.net/rentalapp?retryWrites=true&w=majority'
+
+mongoose.connect(url, 
+    {useNewUrlParser:true, useUnifiedTopology: true })
+mongoose.connection.on('error', function(err){
+    console.log('Could not connect to MongoDB')
+})
 
 
 // app.use(function(req,res,next){
