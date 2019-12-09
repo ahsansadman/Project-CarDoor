@@ -21,6 +21,10 @@ Homepage -
 <img src="images/home4.JPG">
 <img src="images/home5.JPG">
 
+Gallery-
+
+![Capture](https://user-images.githubusercontent.com/55072197/70407125-433c3c80-1a6d-11ea-8e0f-e4b05a086824.PNG)
+
 About US -
 
 <img src="images/about.JPG">
