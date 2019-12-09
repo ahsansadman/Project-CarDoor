@@ -17,6 +17,14 @@ const carSchema = new Schema({
     availability: {
       type: Boolean,
       required: "must provide availability"
+    },
+    rent: {
+      type: Number,
+      required: "please add rent"
+    },
+    description: {
+      type: String,
+      required: "please add description"
     }
   }
 )

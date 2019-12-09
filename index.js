@@ -28,8 +28,8 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname + "/uploads"));
+app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname, "uploads")));
 // app.use(cookieParser('secret'));
 app.use(compress());
 // secure apps by setting various HTTP headers
@@ -106,7 +106,36 @@ app.get('/contact', function(req,res){
 // contact end
 
 
-app.get('/user', function(req, res){
+// show create user form start
+app.get('/adduser', function(req, res){
+    return res.render('forms/adduser');
+})
+// show create user form end
+
+// get all owners
+app.get('/user/owners', function(req, res){
+    User.find({"type": 1}).populate('cars').exec(function(err, users){
+        if(err) return res.status('400').json({msg:'could not get data'})
+        // console.log(users);
+        return res.render('users', {data: users})
+    })
+})
+// get all owners
+
+
+// get all renters start
+app.get('/user/renters', function(req, res){
+    User.find({"type": 2}).populate('cars').exec(function(err, users){
+        if(err) return res.status('400').json({msg:'could not get data'})
+        // console.log(users);
+        return res.status('200').render('users', {data: users})
+    })
+})
+// get all renters end
+
+
+// get all users
+app.get('/users', function(req, res){
     User.find({}).populate('cars').exec(function(err, users){
         if(err) return res.status('400').json({msg:'could not get data'})
         // console.log(users);
@@ -115,6 +144,12 @@ app.get('/user', function(req, res){
 })
 
 
+app.get('/user/:userId/addcar', function(req, res){
+    res.render('forms/addcar', {uid: req.params.userId});
+})
+
+
+// create user start
 app.post('/user/create', function(req, res){
     let user = new User(req.body);
     User.find({'email': user.email}, function(err, users){
@@ -128,6 +163,7 @@ app.post('/user/create', function(req, res){
         })
     })
 })
+// create user end
 
 
 app.get('/user/:userId/cars', function(req, res){
@@ -155,7 +191,6 @@ app.post('/user/:userId/addcar', upload.single('carimage'), (req, res) => {
     }
     
     if (req.file && req.file.mimetype.includes('image')) {
-
 
         const {width, height} = im.identify(imgFilePath, (err, features) => {
             if (err) throw err
@@ -239,15 +274,6 @@ app.post('/user/:userId/addcar', upload.single('carimage'), (req, res) => {
 // addcar route end
 //=================================
 
-
-app.get('/car/:carId', function(req, res){
-    Car.findOne({'_id': req.params.carId}, function(err, car){
-        if(err) return res.status('400').json({msg: "car not found"});
-
-        return res.status('200').json({data: car});
-    })
-})
-
 app.get('/cars', function(req, res){
     Car.find({}, function(err, cars){
         if(err) return res.status('400').json({msg: "cars not found"})
@@ -257,6 +283,16 @@ app.get('/cars', function(req, res){
         return res.render('cars', {cars: cars});
     })
 })
+
+
+app.get('/car/:carId', function(req, res){
+    Car.findOne({'_id': req.params.carId}, function(err, car){
+        if(err) return res.status('400').json({msg: "car not found"});
+
+        return res.status('200').render('cardetail', {data: car});
+    })
+})
+
 
 // catch all route start
 //=====================

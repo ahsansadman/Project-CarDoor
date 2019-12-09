@@ -1,0 +1,54 @@
+<%- include ('./../partials/header'); %>
+
+<div class="container" style='margin-top: 150px;'>
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="contact-form">
+                    <form action="/user/create" method="POST">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="name-input">
+                                    <input type="text" name="username" placeholder="username">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="email-input">
+                                    <input type="email" name="email" placeholder="email address">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="website-input">
+                                    <input type="password" name="password" placeholder="password">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row" style="margin-top: 30px; margin-bottom: 50px">
+                                <div class="col">
+                                    <div class="name-input">
+                                        <label class="form-check-input">Owner</label>
+                                        <input class="form-check-input" name="type" value='1' type="radio">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                        <div class="name-input">
+                                            <label class="form-check-input">Renter</label>
+                                            <input class="form-check-input" name="type" value='2' type="radio">
+                                        </div>
+                                </div>
+    
+                            </div>
+                        <div class="input-submit" style="margin-bottom: 20px">
+                            <button type="submit">Create User</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<%- include ('./../partials/footer'); %>
