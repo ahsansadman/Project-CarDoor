@@ -13,7 +13,7 @@
                                 <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
 
                                 <div class="book-ur-car">
-                                    <form action="index2.html">
+                                    <form action="/book" method="GET">
                                         <div class="pick-location bookinput-item">
                                             <select class="custom-select">
                                               <option selected>Pick Location</option>
@@ -33,16 +33,17 @@
                                         </div>
 
                                         <div class="car-choose bookinput-item">
-                                            <select class="custom-select">
+                                            <!-- <select class="custom-select">
                                               <option selected>Choose Car Type</option>
                                               <option value="1">Sedan</option>
                                               <option value="2">Suv</option>
                                               <option value="3">Wagon</option>
-                                              <option value="4">12 seater</option>
+                                              <option value="4">12 seater</option> -->
+                                              <input type="text" name="cartype" placeholder="Choose car type" />
                                             </select>
                                         </div>
 
-                                        <div class="bookcar-btn bookinput-item">
+                                        <div class="bookcar-btn bookinput-item"  style="background-color: #ffd000;">
                                             <button type="submit">Book Car</button>
                                         </div>
                                     </form>

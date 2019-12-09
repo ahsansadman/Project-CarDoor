@@ -140,10 +140,11 @@
                         <td><%=i.email%></td>
                         <% if (i.type === 1) { %>
                             <td>owner</td>
+                            <td><a href='/user/<%=i._id%>/addcar'>add car</a></td>
                         <% } else { %>
                             <td>renter</td>
+                            <td>not applicable</td>
                         <% } %>
-                        <td><a href='/user/<%=i._id%>/addcar'>add car</a></td>
                     </tr>
                 <% }) %>
             </tbody>

@@ -294,6 +294,18 @@ app.get('/car/:carId', function(req, res){
 })
 
 
+app.get('/book', function(req, res){
+    // console.log(req.query.cartype);
+    Car.find({$and: [{"type": {$regex: `.*${req.query.cartype}.*`}}, {"availability": 1}]}, function(err, cars){
+        if (err) {
+            console.log(err);
+            cars = [];
+        }
+        res.render('cars', {cars: cars})
+    })
+})
+
+
 // catch all route start
 //=====================
 app.get('*', function(req, res){
